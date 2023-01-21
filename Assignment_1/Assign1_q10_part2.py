@@ -1,0 +1,3 @@
+from Assign1_q10 import calculate_compundinterest
+
+calculate_compundinterest()
