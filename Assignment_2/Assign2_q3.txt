@@ -1,0 +1,68 @@
+# Write a code in python for the 8 puzzle problem by taking the following initial and final \
+# start=[
+#     [1,2,3],
+#     [8,0,4],
+#     [7,6,5]
+# ]
+import copy
+goal=[
+    [2,8,1],
+    [0,4,3],
+    [7,6,5]    
+]
+def compare(curr):
+    if curr==goal:
+        return True
+    return False
+def calc_current(start):
+    for i in range(0,3):
+        for j in range(0,3):
+            if start[i][j]==0:
+                return [i,j]
+def move_up(curr,base):
+    if compare(start):
+        return False
+    else:
+        i=curr[0]
+        j=curr[1]
+        start=base.copy()
+        print(base)
+        start[i][j]=start[i-1][j]
+        start[i-1][j]=0
+def move_down(curr,start):
+    if compare(start):
+        return False
+    else:
+        i=curr[0]
+        j=curr[1]
+        start[i][j]=start[i+1][j]
+        start[i+1][j]=0
+def move_right(curr,start):
+    if compare(start):
+        return False
+    else:
+        i=curr[0]
+        j=curr[1]
+        start[i][j]=start[i][j+1]
+        start[i][j+1]=0
+def move_left(curr,start):
+    if compare(start):
+        return False
+    else:
+        i=curr[0]
+        j=curr[1]
+        start[i][j]=start[i][j-1]
+        start[i][j-1]=0
+    
+def do_8puzzle():
+    start=[
+        [1,2,3],
+        [8,0,4],
+        [7,6,5]
+    ]
+    temp=calc_current(start)
+    move_up(temp,start)
+    print(temp)
+    print(start)
+    
+do_8puzzle()
