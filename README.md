@@ -1,1 +1,1 @@
-# AI-Lab  3rd Sem
+# AI-Lab
